@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Trị - Ninh Hiệp Runners</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="brand">Admin <span>Panel</span></div>
+        <a href="#" class="nav-item active" id="nav-leaderboard">Quản lý Bảng vàng</a>
+        <a href="#" class="nav-item" id="nav-events">Quản lý Sự kiện</a>
+        <a href="index.html" class="nav-item" style="margin-top: 16px;">Xem trang chủ</a>
+        <div class="spacer"></div>
+        <a href="#" id="logout-btn" class="nav-item danger logout-btn">🚪 Đăng xuất</a>
+    </aside>
+
+    <main class="main-content">
+        <!-- Tab 1: Leaderboard -->
+        <div id="view-leaderboard" class="view-section active">
+            <div class="header-bar">
+                <h1>Quản lý thành tích VĐV</h1>
+                <button class="action-btn" id="open-add-modal">+ Thêm kết quả</button>
+            </div>
+
+            <div class="controls"
+                style="display: flex; gap: 1rem; align-items: center; justify-content: space-between;">
+                <select id="distance-filter" class="select-box">
+                    <option value="5k">Cự ly: 5K</option>
+                    <option value="10k">Cự ly: 10K</option>
+                    <option value="hm" selected>Cự ly: Half Marathon (21.1K)</option>
+                    <option value="fm">Cự ly: Full Marathon (42K)</option>
+                </select>
+                <input type="text" id="runner-search" class="search-input" placeholder="🔍 Tìm tên VĐV..."
+                    style="padding: 0.7rem 1rem; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; width: 100%; max-width: 300px;">
+            </div>
+
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Hạng</th>
+                            <th>Vận động viên</th>
+                            <th>Thời gian (PB)</th>
+                            <th>Pace trung bình</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-table-body">
+                        <!-- Dữ liệu render bằng JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- End view-leaderboard -->
+
+        <!-- Tab 2: Events -->
+        <div id="view-events" class="view-section" style="display: none;">
+            <div class="header-bar">
+                <h1>Quản lý Sự kiện</h1>
+                <button class="action-btn" id="open-event-modal">+ Thêm sự kiện</button>
+            </div>
+
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Ảnh tĩnh</th>
+                            <th>Tên Sự kiện</th>
+                            <th>Thông tin</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-events-body">
+                        <!-- Dữ liệu render bằng JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- End view-events -->
+    </main>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="record-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Thêm kết quả mới</h2>
+            </div>
+            <form id="record-form">
+                <div class="form-group">
+                    <label>Chọn cự ly</label>
+                    <select id="modal-distance" class="select-box" style="width: 100%;">
+                        <option value="5k">5K</option>
+                        <option value="10k">10K</option>
+                        <option value="hm">Half Marathon</option>
+                        <option value="fm">Full Marathon</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tên Vận động viên</label>
+                    <input type="text" id="modal-name" required placeholder="VD: Nguyễn Văn A">
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px; align-items: center;">
+                    <div style="flex-grow: 1;">
+                        <label>Ảnh đại diện (tùy chọn)</label>
+                        <input type="file" id="modal-avatar" accept="image/*" class="select-box" style="width: 100%; padding: 0.5rem;">
+                    </div>
+                    <div id="avatar-preview-container" style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 15px;">
+                        <span style="font-size: 0.7rem; color: var(--text-muted); text-align: center;">Trống</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Thời gian</label>
+                    <input type="text" id="modal-time" required placeholder="VD: 01:25:30 hoặc 45:30">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-outline" id="close-modal">Hủy</button>
+                    <button type="submit" class="action-btn">Lưu kết quả</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Form Sự Kiện -->
+    <div class="modal-overlay" id="event-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="event-modal-title">Thêm sự kiện mới</h2>
+            </div>
+            <form id="event-form">
+                <div class="form-group">
+                    <label>Tên Sự kiện</label>
+                    <input type="text" id="event-title" required placeholder="VD: Lễ Hội Chạy Bộ Mùa Xuân">
+                </div>
+                <div class="form-group">
+                    <label>URL Hình ảnh (hoặc tên file assets/)</label>
+                    <input type="text" id="event-image" required placeholder="VD: assets/nhr_gallery.png">
+                </div>
+                <div class="form-group">
+                    <label>Thông tin nổi bật (VD: Ngày tháng / Địa điểm)</label>
+                    <input type="text" id="event-info1" required placeholder="VD: 📅 Thời gian: 15/05/2026">
+                </div>
+                <div class="form-group">
+                    <label>Thông tin bổ sung 1</label>
+                    <input type="text" id="event-info2" required placeholder="VD: 📍 Địa điểm: Khu di tích">
+                </div>
+                <div class="form-group">
+                    <label>Thông tin bổ sung 2</label>
+                    <input type="text" id="event-info3" required placeholder="VD: 🏃 Cự ly: 5K, 10K">
+                </div>
+                <div class="form-group">
+                    <label>Trạng thái</label>
+                    <select id="event-status" class="select-box" style="width: 100%;">
+                        <option value="active">Sắp diễn ra</option>
+                        <option value="opening">Đang mở đăng ký</option>
+                        <option value="ended">Đã kết thúc</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-outline" id="close-event-modal">Hủy</button>
+                    <button type="submit" class="action-btn">Lưu sự kiện</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

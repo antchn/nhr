@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninh Hiệp Runners - Chinh Phục Mọi Giới Hạn</title>
+    <meta name="description"
+        content="Trang web chính thức của Ninh Hiệp Runners. Theo dõi bảng vàng thành tích giải chạy marathon của các thành viên.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="gold-text">NINH HIEP</span> Best Marathon
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Trang chủ</a>
+                <a href="#leaderboard">Bảng vàng</a>
+                <a href="events.html">Sự kiện</a>
+                <a href="login.html" class="btn btn-outline-gold">Đăng Nhập</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <img src="assets/nhr_hero.jfif" alt="Ninh Hiệp Runners Marathon">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">
+                VƯỢT LÊN <br>
+                <span class="gold-gradient-text">CHÍNH MÌNH</span>
+            </h1>
+            <p class="hero-subtitle">Câu lạc bộ chạy bộ Ninh Hiệp. Nơi hội tụ những đôi chân không mỏi trên đường đua
+                marathon.</p>
+            <div class="hero-actions">
+                <a href="#leaderboard" class="btn btn-gold">Xem Thành Tích</a>
+                <a href="#motivation" class="btn btn-glass">Về Chúng Tôi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>BẢNG VÀNG <span class="gold-text">THÀNH TÍCH</span></h2>
+                <p>Nơi vinh danh các cá nhân xuất sắc với kỷ lục cá nhân (PB) ấn tượng nhất</p>
+            </div>
+
+            <!-- Leaderboard Controls -->
+            <div class="leaderboard-controls">
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn" data-tab="5k">5K</button>
+                    <button class="tab-btn" data-tab="10k">10K</button>
+                    <button class="tab-btn active" data-tab="hm">Half Marathon</button>
+                    <button class="tab-btn" data-tab="fm">Full Marathon</button>
+                </div>
+
+                <!-- Search -->
+                <div class="search-box">
+                    <input type="text" id="runner-search" placeholder="Tìm kiếm runner...">
+                </div>
+            </div>
+
+            <!-- Leaderboard Table/Cards -->
+            <div class="leaderboard-container">
+                <div class="leaderboard-header">
+                    <div>Hạng</div>
+                    <div>Thành viên</div>
+                    <div>Thành tích (PB)</div>
+                    <div>Pace</div>
+                </div>
+
+                <div class="leaderboard-list" id="leaderboard-list">
+                    <!-- Javascript will populate this -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery/Motivation Section -->
+    <section id="motivation" class="section section-darker">
+        <div class="container container-flex">
+            <div class="motivation-text">
+                <h2>ĐƯỜNG CHẠY <br><span class="gold-text">RỰC LỬA</span></h2>
+                <p>Không có giới hạn nào cho những ai kiên trì. Ninh Hiệp Runners luôn sát cánh cùng bạn vượt qua vạch
+                    đích, kiến tạo những kỷ lục mới.</p>
+                <ul class="stats-list">
+                    <li><span class="gold-text h3">500+</span> Thành viên</li>
+                    <li><span class="gold-text h3">1M+</span> KM Tích lũy</li>
+                    <li><span class="gold-text h3">50+</span> Giải thưởng</li>
+                </ul>
+            </div>
+            <div class="motivation-image">
+                <div class="glow-effect"></div>
+                <img src="assets/nhr_gallery.png" alt="Runner vượt đích" class="glass-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3><span class="gold-text">NINH HIEP</span> Runners</h3>
+                <p>Lan toả tinh thần thể thao và lối sống khỏe mạnh tại Ninh Hiệp và toàn quốc. </p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên kết nhanh</h4>
+                <a href="#home">Trang chủ</a>
+                <a href="#leaderboard">Bảng Thành Tích</a>
+                <a href="events.html">Sự kiện sắp tới</a>
+            </div>
+            <div class="footer-col">
+                <h4>Theo dõi chúng tôi</h4>
+                <p>Facebook Fanpage</p>
+                <p>Strava Club</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ninh Hiệp Runners. Giao diện được thiết kế bởi antc.</p>
+        </div>
+    </footer>
+
+    <!-- Athlete Profile Modal -->
+    <div id="runnerProfileModal" class="modal">
+        <div class="modal-content profile-card">
+            <span class="close-btn" id="closeProfileModal">&times;</span>
+            
+            <div class="profile-header">
+                <div class="profile-avatar" id="profile-avatar-display">
+                    <!-- Avatar image or initials will be injected here -->
+                </div>
+                <h2 id="profile-name" class="profile-name">Tên Vận Động Viên</h2>
+                <div class="profile-tagline">Thành viên Ninh Hiệp Runners</div>
+            </div>
+
+            <div class="profile-stats-section">
+                <h3 class="section-title">Thành Tích Tốt Nhất (PB)</h3>
+                <div class="profile-stats-grid" id="profile-stats-grid">
+                    <!-- Dynamic stats injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
