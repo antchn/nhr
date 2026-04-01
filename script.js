@@ -42,7 +42,7 @@ const initialLeaderboardData = {
 const initialEventsData = [
     {
         title: "Lễ Hội Chạy Bộ Mùa Xuân 2026",
-        image: "assets/nhr_gallery.png",
+        image: "nhr_gallery.png",
         info1: "📅 Thời gian: 15/05/2026",
         info2: "📍 Địa điểm: Khu di tích Ninh Hiệp",
         info3: "🏃 Cự ly: 5K, 10K, Half Marathon",
@@ -51,7 +51,7 @@ const initialEventsData = [
     },
     {
         title: "Ninh Hiệp Ekiden Challenge 2026",
-        image: "assets/nhr_gallery.png",
+        image: "nhr_gallery.png",
         info1: "📅 Thời gian: 25/08/2026",
         info2: "📍 Địa điểm: Công viên Trung Tâm",
         info3: "🏃 Thể thức: Chạy tiếp sức đội 4 người",
@@ -60,7 +60,7 @@ const initialEventsData = [
     },
     {
         title: "Giải Chạy Kỷ Niệm 5 Năm Thành Lập CLB",
-        image: "assets/nhr_hero.jfif",
+        image: "nhr_hero.jfif",
         info1: "📅 Thời gian: 10/12/2025",
         info2: "📍 Địa điểm: Quảng trường chính",
         info3: "🏃 300+ VĐV tham dự",
