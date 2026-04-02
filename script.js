@@ -1,42 +1,42 @@
 // Mock Data cho Leaderboard
-const initialLeaderboardData = {
-    '5k': [
-        { name: "Nguyễn Văn Dũng", time: "00:18:30", pace: "3:42" },
-        { name: "Nguyễn Thị Oanh", time: "00:19:15", pace: "3:51" },
-        { name: "Bùi Minh Cường", time: "00:20:00", pace: "4:00" },
-        { name: "Nguyễn Văn Hoàn", time: "00:21:10", pace: "4:14" },
-        { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
-        { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
-        { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
-        { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
-        { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
-        { name: "Nguyễn Như Trường", time: "00:23:05", pace: "4:30" },
-        { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
-        { name: "Nguyễn Đăng Chung", time: "00:22:05", pace: "4:25" }
-    ],
-    '10k': [
-        { name: "Nguyễn Như Ngọc", time: "00:38:45", pace: "3:52" },
-        { name: "Nguyễn Hoàng Dương", time: "00:40:12", pace: "4:01" },
-        { name: "Nguyễn Tất Hùng", time: "00:42:30", pace: "4:15" },
-        { name: "Nguyễn Văn Thoại", time: "00:44:00", pace: "4:24" },
-        { name: "Nguyễn Ngọc Tuấn", time: "00:45:10", pace: "4:31" }
-    ],
-    'hm': [ // Half Marathon 21.1km
-        { name: "Bùi Minh Trường", time: "01:25:30", pace: "4:03" },
-        { name: "Bạch Văn Huân", time: "01:28:15", pace: "4:11" },
-        { name: "Nguyễn Văn Tú", time: "01:31:00", pace: "4:19" },
-        { name: "Nguyễn Văn Quân", time: "01:35:45", pace: "4:32" },
-        { name: "Nguyễn Văn Thắng", time: "01:38:20", pace: "4:40" }
-    ],
-    'fm': [ // Full Marathon 42.195km
-        { name: "Bùi Minh Trường", time: "02:55:10", pace: "4:09" },
-        { name: "Bạch Văn Huân", time: "02:59:45", pace: "4:16" },
-        { name: "Nguyễn Văn Tú", time: "03:15:30", pace: "4:38" },
-        { name: "Nguyễn Văn Quân", time: "03:22:15", pace: "4:48" },
-        { name: "Nguyễn Văn Thắng", time: "03:28:00", pace: "4:56" }
+//const initialLeaderboardData = {
+    //'5k': [
+     //   { name: "Nguyễn Văn Dũng", time: "00:18:30", pace: "3:42" },
+     //   { name: "Nguyễn Thị Oanh", time: "00:19:15", pace: "3:51" },
+  //      { name: "Bùi Minh Cường", time: "00:20:00", pace: "4:00" },
+  //      { name: "Nguyễn Văn Hoàn", time: "00:21:10", pace: "4:14" },
+  //      { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
+  //      { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
+  //      { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
+  //      { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
+   //     { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
+   //     { name: "Nguyễn Như Trường", time: "00:23:05", pace: "4:30" },
+    //    { name: "Nguyễn Văn Đại", time: "00:22:05", pace: "4:25" },
+     //   { name: "Nguyễn Đăng Chung", time: "00:22:05", pace: "4:25" }
+  //  ],
+ //   '10k': [
+ //       { name: "Nguyễn Như Ngọc", time: "00:38:45", pace: "3:52" },
+  //      { name: "Nguyễn Hoàng Dương", time: "00:40:12", pace: "4:01" },
+  //      { name: "Nguyễn Tất Hùng", time: "00:42:30", pace: "4:15" },
+ //       { name: "Nguyễn Văn Thoại", time: "00:44:00", pace: "4:24" },
+ //       { name: "Nguyễn Ngọc Tuấn", time: "00:45:10", pace: "4:31" }
+//    ],
+//    'hm': [ // Half Marathon 21.1km
+  //      { name: "Bùi Minh Trường", time: "01:25:30", pace: "4:03" },
+ //       { name: "Bạch Văn Huân", time: "01:28:15", pace: "4:11" },
+ //       { name: "Nguyễn Văn Tú", time: "01:31:00", pace: "4:19" },
+  //      { name: "Nguyễn Văn Quân", time: "01:35:45", pace: "4:32" },
+  //      { name: "Nguyễn Văn Thắng", time: "01:38:20", pace: "4:40" }
+//    ],
+//    'fm': [ // Full Marathon 42.195km
+//        { name: "Bùi Minh Trường", time: "02:55:10", pace: "4:09" },
+//        { name: "Bạch Văn Huân", time: "02:59:45", pace: "4:16" },
+//        { name: "Nguyễn Văn Tú", time: "03:15:30", pace: "4:38" },
+//        { name: "Nguyễn Văn Quân", time: "03:22:15", pace: "4:48" },
+ //       { name: "Nguyễn Văn Thắng", time: "03:28:00", pace: "4:56" }
 
-    ]
-};
+//    ]
+//};
 
 // Mock Data cho Sự kiện
 const initialEventsData = [
