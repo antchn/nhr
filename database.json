@@ -1,0 +1,228 @@
+{
+  "leaderboard": {
+    "5k": [
+      {
+        "name": "Nguyễn Văn Dũng",
+        "time": "00:18:30",
+        "pace": "3:42"
+      },
+      {
+        "name": "Nguyễn Thị Oanh",
+        "time": "00:19:15",
+        "pace": "3:51"
+      },
+      {
+        "name": "Bùi Minh Cường",
+        "time": "00:20:00",
+        "pace": "4:00"
+      },
+      {
+        "name": "Nguyễn Văn Hoàn",
+        "time": "00:21:10",
+        "pace": "4:14"
+      },
+      {
+        "name": "Nguyễn Văn Đại",
+        "time": "00:22:05",
+        "pace": "4:25"
+      },
+      {
+        "name": "Nguyễn Văn Đại",
+        "time": "00:22:05",
+        "pace": "4:25"
+      },
+      {
+        "name": "Nguyễn Văn Đại",
+        "time": "00:22:05",
+        "pace": "4:25"
+      },
+      {
+        "name": "Nguyễn Văn Đại",
+        "time": "00:22:05",
+        "pace": "4:25"
+      },
+      {
+        "name": "Nguyễn Văn Đại",
+        "time": "00:22:05",
+        "pace": "4:25"
+      },
+      {
+        "name": "Nguyễn Như Trường",
+        "time": "00:23:05",
+        "pace": "4:30"
+      },
+      {
+        "name": "Nguyễn Văn Đại",
+        "time": "00:22:05",
+        "pace": "4:25"
+      },
+      {
+        "name": "Nguyễn Đăng Chung",
+        "time": "00:22:05",
+        "pace": "4:25"
+      }
+    ],
+    "10k": [
+      {
+        "name": "Nguyễn Như Ngọc",
+        "time": "00:38:45",
+        "pace": "3:52"
+      },
+      {
+        "name": "Nguyễn Hoàng Dương",
+        "time": "00:40:12",
+        "pace": "4:01"
+      },
+      {
+        "name": "Nguyễn Tất Hùng",
+        "time": "00:42:30",
+        "pace": "4:15"
+      },
+      {
+        "name": "Nguyễn Văn Thoại",
+        "time": "00:44:00",
+        "pace": "4:24"
+      },
+      {
+        "name": "Nguyễn Ngọc Tuấn",
+        "time": "00:45:10",
+        "pace": "4:31"
+      }
+    ],
+    "hm": [
+      {
+        "name": "Bùi Minh Trường",
+        "time": "01:41:27",
+        "pace": "4:48",
+        "avatar": null
+      },
+      {
+        "name": "Bạch Văn Huân",
+        "time": "01:38:38",
+        "pace": "4:40",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Thoại",
+        "time": "01:35:48",
+        "pace": "4:32",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Hoàn",
+        "time": "01:40:11",
+        "pace": "4:44",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Quân",
+        "time": "01:37:36",
+        "pace": "4:37",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Tất Hùng",
+        "time": "01:40:51",
+        "pace": "4:46",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Tiến",
+        "time": "01:41:23",
+        "pace": "4:48",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Thắng",
+        "time": "01:26:09",
+        "pace": "4:04",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Tú",
+        "time": "01:40:26",
+        "pace": "4:45",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Tài",
+        "time": "01:29:25",
+        "pace": "4:14",
+        "avatar": null
+      }
+    ],
+    "fm": [
+      {
+        "name": "Bùi Minh Trường",
+        "time": "03:56:46",
+        "pace": "5:36",
+        "avatar": null
+      },
+      {
+        "name": "Bạch Văn Huân",
+        "time": "03:41:57",
+        "pace": "5:15",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Thoại",
+        "time": "03:32:49",
+        "pace": "5:02",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Hoàn",
+        "time": "03:29:11",
+        "pace": "4:57",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Thắng",
+        "time": "03:23:08",
+        "pace": "4:48",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Văn Tú",
+        "time": "03:28:35",
+        "pace": "4:56",
+        "avatar": null
+      },
+      {
+        "name": "Nguyễn Huy Hải",
+        "time": "03:58:11",
+        "pace": "5:38",
+        "avatar": null
+      }
+    ]
+  },
+  "events": [
+    {
+      "title": "Lễ Hội Chạy Bộ Mùa Xuân 2026",
+      "image": "assets/nhr_hero.jfif",
+      "info1": "📅 Thời gian: 15/05/2026",
+      "info2": "📍 Địa điểm: Khu di tích Ninh Hiệp",
+      "info3": "🏃 Cự ly: 5K, 10K, Half Marathon",
+      "status": "active",
+      "link": "#"
+    },
+    {
+      "title": "Ninh Hiệp Ekiden Challenge 2026",
+      "image": "assets/nhr_hero.jfif",
+      "info1": "📅 Thời gian: 25/08/2026",
+      "info2": "📍 Địa điểm: Công viên Trung Tâm",
+      "info3": "🏃 Thể thức: Chạy tiếp sức đội 4 người",
+      "status": "opening",
+      "link": "#"
+    },
+    {
+      "title": "Giải Chạy Kỷ Niệm 3 Năm Thành Lập CLB",
+      "image": "assets/nhr_hero.jfif",
+      "info1": "📅 Thời gian: 10/12/2025",
+      "info2": "📍 Địa điểm: Quảng trường chính",
+      "info3": "🏃 300+ VĐV tham dự",
+      "status": "ended",
+      "link": "#"
+    }
+  ]
+}

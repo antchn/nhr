@@ -10,7 +10,8 @@
     --primary-color: #FFD700;
     --danger-color: #ff4d4f;
     --success-color: #52c41a;
-    --font-admin: 'Inter', sans-serif; /* Setup minimalist font */
+    --font-admin: 'Inter', sans-serif;
+    /* Setup minimalist font */
 }
 
 * {
@@ -46,7 +47,10 @@ body {
     color: var(--text-primary);
     margin-bottom: 24px;
 }
-.brand span { color: var(--primary-color); }
+
+.brand span {
+    color: var(--primary-color);
+}
 
 .nav-item {
     padding: 12px 24px;
@@ -57,20 +61,26 @@ body {
     transition: 0.2s;
 }
 
-.nav-item:hover, .nav-item.active {
+.nav-item:hover,
+.nav-item.active {
     background-color: rgba(255, 215, 0, 0.05);
     color: var(--primary-color);
     border-right: 3px solid var(--primary-color);
 }
 
-.spacer { flex-grow: 1; }
+.spacer {
+    flex-grow: 1;
+}
 
 .logout-btn {
     border-top: 1px solid var(--border-color);
     padding-top: 24px;
     margin-top: auto;
 }
-.nav-item.danger { color: var(--danger-color); }
+
+.nav-item.danger {
+    color: var(--danger-color);
+}
 
 /* Main Content */
 .main-content {
@@ -103,7 +113,10 @@ body {
     font-size: 0.95rem;
 }
 
-.action-btn:hover { background-color: #e6c200; transform: translateY(-1px); }
+.action-btn:hover {
+    background-color: #e6c200;
+    transform: translateY(-1px);
+}
 
 /* Controls */
 .controls {
@@ -137,7 +150,8 @@ body {
     text-align: left;
 }
 
-.admin-table th, .admin-table td {
+.admin-table th,
+.admin-table td {
     padding: 16px 24px;
     border-bottom: 1px solid var(--border-color);
 }
@@ -147,7 +161,7 @@ body {
     text-transform: uppercase;
     color: var(--text-secondary);
     font-weight: 600;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .admin-table tr:hover {
@@ -167,15 +181,30 @@ body {
     border-radius: 4px;
     transition: 0.2s;
 }
-.btn-icon:hover { color: var(--text-primary); background: rgba(255,255,255,0.1); }
-.btn-icon.edit:hover { color: #3b82f6; background: rgba(59, 130, 246, 0.1); }
-.btn-icon.delete:hover { color: var(--danger-color); background: rgba(255, 77, 79, 0.1); }
+
+.btn-icon:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-icon.edit:hover {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.btn-icon.delete:hover {
+    color: var(--danger-color);
+    background: rgba(255, 77, 79, 0.1);
+}
 
 /* Modal */
 .modal-overlay {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,11 +213,16 @@ body {
     pointer-events: none;
     transition: 0.2s;
 }
-.modal-overlay.active { opacity: 1; pointer-events: all; }
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
 
 .modal-content {
     background: var(--panel-bg);
-    width: 100%; max-width: 500px;
+    width: 100%;
+    max-width: 500px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     padding: 24px;
@@ -200,30 +234,55 @@ body {
     align-items: center;
     margin-bottom: 24px;
 }
-.modal-header h2 { font-size: 1.25rem; }
 
-.form-group { margin-bottom: 16px; }
-.form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); font-size: 0.9rem; }
+.modal-header h2 {
+    font-size: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
 .form-group input {
     width: 100%;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     border: 1px solid var(--border-color);
     color: #fff;
     padding: 12px;
     border-radius: 6px;
     outline: none;
 }
-.form-group input:focus { border-color: var(--primary-color); }
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+}
 
 .modal-actions {
-    display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
 }
 
 .btn-outline {
-    background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);
-    padding: 10px 16px; border-radius: 6px; cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
 }
-.btn-outline:hover { background: rgba(255,255,255,0.05); }
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
 
 /* Badges Status Sự Kiện */
 .badge {
@@ -232,9 +291,21 @@ body {
     font-size: 0.75rem;
     font-weight: 600;
 }
-.badge.active { background-color: rgba(82, 196, 26, 0.15); color: #52c41a; }
-.badge.opening { background-color: rgba(255, 215, 0, 0.15); color: #FFD700; }
-.badge.ended { background-color: rgba(255, 77, 79, 0.15); color: #ff4d4f; }
+
+.badge.active {
+    background-color: rgba(82, 196, 26, 0.15);
+    color: #52c41a;
+}
+
+.badge.opening {
+    background-color: rgba(255, 215, 0, 0.15);
+    color: #FFD700;
+}
+
+.badge.ended {
+    background-color: rgba(255, 77, 79, 0.15);
+    color: #ff4d4f;
+}
 
 /* Phân tách giữa các tab */
 .view-section {
@@ -242,8 +313,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /*==========================================
@@ -285,9 +363,11 @@ body {
         background-color: rgba(255, 215, 0, 0.1);
         border: 1px solid var(--primary-color);
     }
-    
-    .spacer { display: none; }
-    
+
+    .spacer {
+        display: none;
+    }
+
     .logout-btn {
         border-top: none;
         padding-top: 0;
@@ -310,7 +390,8 @@ body {
         width: 100%;
     }
 
-    .select-box, .action-btn {
+    .select-box,
+    .action-btn {
         width: 100%;
     }
 
@@ -319,7 +400,8 @@ body {
     }
 
     .admin-table {
-        min-width: 600px; /* Bắt buộc cuộn ngang trên mobile */
+        min-width: 600px;
+        /* Bắt buộc cuộn ngang trên mobile */
     }
 
     .modal-content {

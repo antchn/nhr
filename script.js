@@ -42,7 +42,7 @@ const initialLeaderboardData = {
 const initialEventsData = [
     {
         title: "Lễ Hội Chạy Bộ Mùa Xuân 2026",
-        image: "https://raw.githubusercontent.com/antchn/nhr/refs/heads/main/nhr_hero.jfif",
+        image: "assets/nhr_gallery.png",
         info1: "📅 Thời gian: 15/05/2026",
         info2: "📍 Địa điểm: Khu di tích Ninh Hiệp",
         info3: "🏃 Cự ly: 5K, 10K, Half Marathon",
@@ -51,7 +51,7 @@ const initialEventsData = [
     },
     {
         title: "Ninh Hiệp Ekiden Challenge 2026",
-        image: "https://raw.githubusercontent.com/antchn/nhr/refs/heads/main/nhr_hero.jfif",
+        image: "assets/nhr_gallery.png",
         info1: "📅 Thời gian: 25/08/2026",
         info2: "📍 Địa điểm: Công viên Trung Tâm",
         info3: "🏃 Thể thức: Chạy tiếp sức đội 4 người",
@@ -59,12 +59,12 @@ const initialEventsData = [
         link: "#"
     },
     {
-        title: "Giải Chạy Kỷ Niệm 3 Năm Thành Lập CLB",
-        image: "https://raw.githubusercontent.com/antchn/nhr/refs/heads/main/nhr_hero.jfif",
-        info1: "📅 Thời gian: 8/8/2026",
+        title: "Giải Chạy Kỷ Niệm 5 Năm Thành Lập CLB",
+        image: "assets/nhr_hero.jfif",
+        info1: "📅 Thời gian: 10/12/2025",
         info2: "📍 Địa điểm: Quảng trường chính",
         info3: "🏃 300+ VĐV tham dự",
-        status: "opening",
+        status: "ended",
         link: "#"
     }
 ];
@@ -152,8 +152,8 @@ function renderLeaderboard(distance, searchTerm = '') {
 
         // Tạo avatar từ 2 chữ cái đầu hoặc dùng ảnh đã tải lên
         const initials = runner.name.substring(0, 2).toUpperCase();
-        const avatarContent = runner.avatar 
-            ? `<img src="${runner.avatar}" alt="${runner.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">` 
+        const avatarContent = runner.avatar
+            ? `<img src="${runner.avatar}" alt="${runner.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`
             : `${initials}`;
 
         row.innerHTML = `
@@ -210,7 +210,7 @@ const distanceNames = {
     'fm': 'Full Marathon'
 };
 
-window.openRunnerProfile = function(runnerName) {
+window.openRunnerProfile = function (runnerName) {
     if (!runnerProfileModal) return;
 
     // Collect runner data across all distances
@@ -219,7 +219,7 @@ window.openRunnerProfile = function(runnerName) {
     let hasStats = false;
 
     // Ordered distances
-    const distKeys = ['5k', '10k', 'hm', 'fm'];
+    const distKeys = ['hm', 'fm'];
 
     distKeys.forEach(key => {
         const records = leaderboardData[key];
@@ -230,7 +230,7 @@ window.openRunnerProfile = function(runnerName) {
                 if (!runnerAvatar && runnerData.avatar) {
                     runnerAvatar = runnerData.avatar;
                 }
-                
+
                 // Build stat card
                 hasStats = true;
                 statsHTML += `
@@ -277,14 +277,25 @@ if (closeProfileModalBtn) {
 }
 
 // Close when clicking outside
-window.addEventListener('click', function(e) {
+window.addEventListener('click', function (e) {
     if (e.target === runnerProfileModal) {
         closeRunnerProfile();
     }
 });
 
 // Khởi tạo mặc định hiển thị Half Marathon và kiểm tra trạng thái đăng nhập
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('/api/data');
+        if (response.ok) {
+            const data = await response.json();
+            leaderboardData = data.leaderboard;
+            eventsData = data.events;
+        }
+    } catch (e) {
+        console.error("Lỗi lấy dữ liệu từ API:", e);
+    }
+
     renderLeaderboard('hm');
     renderEventsPage();
 
@@ -296,9 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
         loginButtons.forEach(btn => {
             // Đổi text thành nút vào trang Admin
             btn.innerHTML = `⚙️ Trang quản trị`;
-            btn.href = "admin.html"; 
+            btn.href = "admin.html";
             btn.classList.remove('btn-outline-gold');
-            btn.classList.add('btn-gold'); 
+            btn.classList.add('btn-gold');
         });
     }
 });

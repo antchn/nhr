@@ -6,13 +6,36 @@ if (!localStorage.getItem('loggedInUser')) {
 
 // Global state
 let currentDistance = 'hm';
-// Lấy dữ liệu từ localStorage
-let adminData = JSON.parse(localStorage.getItem('ninhHiepRunners_Data'));
-let eventsData = JSON.parse(localStorage.getItem('ninhHiepRunners_Events'));
+let adminData = { '5k': [], '10k': [], 'hm': [], 'fm': [] };
+let eventsData = [];
 
-if (!adminData || !eventsData) {
-    alert("Lỗi tải dữ liệu. Xin hãy quay lại trang chủ trước (để hệ thống tạo DB).");
-    window.location.href = 'index.html';
+// Hàm tải dữ liệu từ Server Python
+async function loadDataFromServer() {
+    try {
+        const response = await fetch('/api/data');
+        if (response.ok) {
+            const data = await response.json();
+            adminData = data.leaderboard || adminData;
+            eventsData = data.events || eventsData;
+        }
+    } catch (e) {
+        console.warn("Không kết nối được server, dùng dữ liệu mẫu", e);
+    }
+    renderAdminTable();
+    renderAdminEvents();
+}
+
+// Đẩy dữ liệu lên Server Python
+async function saveToDB() {
+    try {
+        await fetch('/api/data', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ leaderboard: adminData, events: eventsData })
+        });
+    } catch (e) {
+        console.error("Lỗi khi lưu DB:", e);
+    }
 }
 
 // Dom Elements - Tabs
@@ -253,8 +276,9 @@ recordForm.addEventListener('submit', (e) => {
     closeModal();
 });
 
-function saveAndRender() {
+async function saveAndRender() {
     localStorage.setItem('ninhHiepRunners_Data', JSON.stringify(adminData));
+    await saveToDB(); // Gọi API lưu
     if(inputDist.value !== currentDistance) {
         // Switch view if adding to different distance
         currentDistance = inputDist.value;
@@ -359,6 +383,7 @@ eventForm.addEventListener('submit', (e) => {
     }
 
     localStorage.setItem('ninhHiepRunners_Events', JSON.stringify(eventsData));
+    saveToDB(); // Gọi API lưu Sự Kiện
     renderAdminEvents();
     closeEventModal();
 });
@@ -383,13 +408,13 @@ window.deleteEvent = function(index) {
     if(confirm(`Bạn có chắc muốn xóa sự kiện "${eventsData[index].title}"?`)) {
         eventsData.splice(index, 1);
         localStorage.setItem('ninhHiepRunners_Events', JSON.stringify(eventsData));
+        saveToDB(); // Gọi API lưu Sự Kiện
         renderAdminEvents();
     }
 }
 
 // Khởi chạy mặc định
-renderAdminTable();
-renderAdminEvents();
+loadDataFromServer();
 
 // Sự kiện đăng xuất (dành riêng cho Sidebar vì Admin có File JS riêng)
 document.getElementById('logout-btn').addEventListener('click', (e) => {
