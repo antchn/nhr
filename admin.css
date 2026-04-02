@@ -245,3 +245,95 @@ body {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/*==========================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+==========================================*/
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .brand {
+        width: 100%;
+        text-align: center;
+        border-bottom: none;
+        padding: 0 0 16px;
+        margin-bottom: 0;
+    }
+
+    .nav-item {
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        border-right: none !important;
+    }
+
+    .nav-item.active {
+        background-color: rgba(255, 215, 0, 0.1);
+        border: 1px solid var(--primary-color);
+    }
+    
+    .spacer { display: none; }
+    
+    .logout-btn {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .main-content {
+        padding: 16px;
+    }
+
+    .header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .select-box, .action-btn {
+        width: 100%;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .admin-table {
+        min-width: 600px; /* Bắt buộc cuộn ngang trên mobile */
+    }
+
+    .modal-content {
+        padding: 20px;
+        margin: 16px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions button {
+        width: 100%;
+    }
+}
